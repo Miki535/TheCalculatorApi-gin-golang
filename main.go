@@ -95,6 +95,7 @@ func main() {
 			c.JSON(400, gin.H{
 				"error": "unknown type!",
 			})
+			return
 		}
 
 		response := MathematicanResponse{
