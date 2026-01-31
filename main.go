@@ -4,12 +4,23 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+
+	"math"
 )
 
 type CalculatorRequest struct {
 	FirstNumber  int    `json:"firstnumber"`
 	SecondNumber int    `json:"secondnumber"`
 	Sign         string `json:"sign"`
+}
+
+type MathematicanRequest struct {
+	Number float64 `json:"number"`
+	Type   string  `json:"type"`
+}
+
+type MathematicanResponse struct {
+	Response float64 `json:"result"`
 }
 
 type CalculatorResponse struct {
@@ -19,6 +30,7 @@ type CalculatorResponse struct {
 func main() {
 	r := gin.Default()
 
+	//get calculator response
 	r.POST("/getRequest", func(c *gin.Context) {
 		var calcRequest CalculatorRequest
 
@@ -51,11 +63,45 @@ func main() {
 			return
 		}
 
-		resp := CalculatorResponse{
+		response := CalculatorResponse{
 			Result: result,
 		}
 
-		c.JSON(200, resp)
+		c.JSON(200, response)
+	})
+
+	// get mathematican response
+	r.POST("/getResponse", func(c *gin.Context) {
+		var mathResponse MathematicanRequest
+
+		if err := c.ShouldBindJSON(&mathResponse); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": "bad JSON request",
+			})
+			return
+		}
+		var result float64
+		//cheking type (sin, cos, tan, %)
+		switch mathResponse.Type {
+		case "sin":
+			result = math.Sin(mathResponse.Number * math.Pi / 180)
+		case "cos":
+			result = math.Cos(mathResponse.Number * math.Pi / 180)
+		case "tan":
+			result = math.Tan(mathResponse.Number * math.Pi / 180)
+		case "%":
+			return
+		default:
+			c.JSON(400, gin.H{
+				"error": "unknown type!",
+			})
+		}
+
+		response := MathematicanResponse{
+			Response: result,
+		}
+
+		c.JSON(200, response)
 	})
 
 	r.Run()
