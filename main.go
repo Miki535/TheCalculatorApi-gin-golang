@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -14,6 +15,10 @@ type CalculatorRequest struct {
 	Sign         string `json:"sign"`
 }
 
+type CalculatorResponse struct {
+	Result int `json:"result"`
+}
+
 type MathematicanRequest struct {
 	Number float64 `json:"number"`
 	Type   string  `json:"type"`
@@ -23,12 +28,15 @@ type MathematicanResponse struct {
 	Response float64 `json:"result"`
 }
 
-type CalculatorResponse struct {
-	Result int `json:"result"`
-}
-
 func main() {
 	r := gin.Default()
+
+	//information about API
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"Information about api": "info", // put info zavtra!
+		})
+	})
 
 	//get calculator response
 	r.POST("/getRequest", func(c *gin.Context) {
@@ -90,7 +98,15 @@ func main() {
 		case "tan":
 			result = math.Tan(mathResponse.Number * math.Pi / 180)
 		case "%":
-			return
+			if mathResponse.Number < 0 {
+				c.JSON(400, gin.H{
+					"error": "You cannot find %",
+				})
+				return
+			} else {
+				result = mathResponse.Number
+			}
+
 		default:
 			c.JSON(400, gin.H{
 				"error": "unknown type!",
@@ -105,5 +121,6 @@ func main() {
 		c.JSON(200, response)
 	})
 
+	fmt.Println("Running on http://localhost:8080/")
 	r.Run()
 }
