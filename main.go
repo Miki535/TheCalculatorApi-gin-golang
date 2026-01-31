@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -19,14 +18,13 @@ type CalculatorResponse struct {
 
 func main() {
 	r := gin.Default()
-	fmt.Println("Running on http://localhost:8080/getRequest")
 
 	r.POST("/getRequest", func(c *gin.Context) {
 		var calcRequest CalculatorRequest
 
 		if err := c.ShouldBindJSON(&calcRequest); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
-				"error": "bad JSON",
+				"error": "bad JSON request",
 			})
 			return
 		}
