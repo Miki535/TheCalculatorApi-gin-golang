@@ -1,22 +1,70 @@
 # TheCalculatorApi-gin-golang
-Simple REST API written in go, gin framework!
 
-Installation:
-1. git clone https://github.com/Miki535/TheCalculatorApi-gin-golang
-2. Open terminal
-3. go run main.go
+A simple REST API written in Go using the Gin framework.  
+This API provides both basic and advanced mathematical calculations.
 
+---
 
-Endpoints:
-1. POST /getRequest = use for mathematican calculator function
-2. POST /getResponse = use for classic calculator function
-3. GET / = use to get information about API
+## 🚀 Features
 
+- Basic arithmetic operations: `+`, `-`, `*`, `/`
+- Advanced mathematical functions:
+  - `sin`, `cos`, `tan`
+  - `sqrt`, `pow`, `log`
+  - `mod` (modulo)
+- JSON-based requests and responses
+- Simple and lightweight implementation
+
+---
+
+## ⚙️ Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Miki535/TheCalculatorApi-gin-golang
+Open the project folder in terminal.
+
+Run the server:
+
+go run main.go
+
+📡 Endpoints
+1. POST /getResponse
+
+Used for advanced mathematical calculator functions (sin, cos, tan, sqrt, pow, log, modulo).
+
+2. POST /getRequest
+
+Used for classic calculator functions (addition, subtraction, multiplication, division).
+
+3. GET /
+
+Returns basic information about the API.
 
 Postman screenshots:
 
 Basic calculator (+, -, /, *)
-<img width="895" height="709" alt="working-api-postman" src="https://github.com/user-attachments/assets/5176db4e-788f-46ee-bb3b-080ccd0d6881" />
+<img width="906" height="546" alt="Postman-calc-ussing-screenshot" src="https://github.com/user-attachments/assets/84ec4fb1-2f7a-4509-8aca-800d62bcebe9" />
+
 
 Mathematican calculator (sin, cos, tan, sqrt, pow, log, module)
-<img width="1032" height="689" alt="mathematican-api-postman" src="https://github.com/user-attachments/assets/00e0557b-b22a-42cc-a306-b6793f66f49b" />
+<img width="905" height="478" alt="Postman-math-calc-ussing-screenshot" src="https://github.com/user-attachments/assets/dd0b3f21-8154-4c0d-8814-8f66036e35ac" />
+
+
+Information about API
+<img width="905" height="478" alt="Postman-math-calc-ussing-screenshot" src="https://github.com/user-attachments/assets/2e33d051-e68e-4c94-81a9-c46c991f29ac" />
+
+
+📌 Project Purpose
+
+This project was created for learning and practicing:
+
+Go (Golang)
+
+Gin web framework
+
+REST API design
+
+Mathematical expression processing
+
+It can be used as a backend service for calculator applications or as an educational example.
