@@ -20,8 +20,9 @@ type CalculatorResponse struct {
 }
 
 type MathematicanRequest struct {
-	Number float64 `json:"number"`
-	Type   string  `json:"type"`
+	Number    float64 `json:"number"`
+	Type      string  `json:"type"`
+	secondNum float64 `json:"secondNum"` // second number for Pow(number, secondNum)
 }
 
 type MathematicanResponse struct {
@@ -89,7 +90,7 @@ func main() {
 			return
 		}
 		var result float64
-		//cheking type (sin, cos, tan)
+		//cheking type (sin, cos, tan, sqrt, pow, log, module)
 		switch mathResponse.Type {
 		case "sin":
 			result = math.Sin(mathResponse.Number * math.Pi / 180)
@@ -97,6 +98,14 @@ func main() {
 			result = math.Cos(mathResponse.Number * math.Pi / 180)
 		case "tan":
 			result = math.Tan(mathResponse.Number * math.Pi / 180)
+		case "sqrt":
+			result = math.Sqrt(mathResponse.Number)
+		case "pow":
+			result = math.Pow(mathResponse.Number, mathResponse.secondNum)
+		case "log":
+			result = math.Log(mathResponse.Number)
+		case "module":
+			result = math.Abs(mathResponse.Number)
 		default:
 			c.JSON(400, gin.H{
 				"error": "unknown type!",
