@@ -1,5 +1,18 @@
 # TheCalculatorApi-gin-golang
-Simple calculator api using gin framework!
+Simple REST API written in go, gin framework!
+
+Installation:
+1. git clone https://github.com/Miki535/TheCalculatorApi-gin-golang
+2. Open terminal
+3. go run main.go
+
+
+Endpoints:
+1. POST /getRequest = use for mathematican calculator function
+2. POST /getResponse = use for classic calculator function
+3. GET / = use to get information about API
+
+
 Postman screenshots:
 
 Basic calculator (+, -, /, *)
