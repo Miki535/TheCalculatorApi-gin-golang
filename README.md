@@ -52,7 +52,8 @@ Mathematican calculator (sin, cos, tan, sqrt, pow, log, module)
 
 
 Information about API
-<img width="905" height="478" alt="Postman-math-calc-ussing-screenshot" src="https://github.com/user-attachments/assets/2e33d051-e68e-4c94-81a9-c46c991f29ac" />
+<img width="908" height="332" alt="Postman-api-info-screenshot" src="https://github.com/user-attachments/assets/ce007708-c73f-42a8-97a9-99916c0179f8" />
+
 
 
 📌 Project Purpose
