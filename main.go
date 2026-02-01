@@ -89,7 +89,7 @@ func main() {
 			return
 		}
 		var result float64
-		//cheking type (sin, cos, tan, %)
+		//cheking type (sin, cos, tan)
 		switch mathResponse.Type {
 		case "sin":
 			result = math.Sin(mathResponse.Number * math.Pi / 180)
@@ -97,16 +97,6 @@ func main() {
 			result = math.Cos(mathResponse.Number * math.Pi / 180)
 		case "tan":
 			result = math.Tan(mathResponse.Number * math.Pi / 180)
-		case "%":
-			if mathResponse.Number < 0 {
-				c.JSON(400, gin.H{
-					"error": "You cannot find %",
-				})
-				return
-			} else {
-				result = mathResponse.Number
-			}
-
 		default:
 			c.JSON(400, gin.H{
 				"error": "unknown type!",
