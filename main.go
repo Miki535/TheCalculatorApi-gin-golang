@@ -10,13 +10,13 @@ import (
 )
 
 type CalculatorRequest struct {
-	FirstNumber  int    `json:"firstnumber"`
-	SecondNumber int    `json:"secondnumber"`
-	Sign         string `json:"sign"`
+	FirstNumber  float64 `json:"firstnumber"`
+	SecondNumber float64 `json:"secondnumber"`
+	Sign         string  `json:"sign"`
 }
 
 type CalculatorResponse struct {
-	Result int `json:"result"`
+	Result float64 `json:"result"`
 }
 
 type MathematicanRequest struct {
@@ -35,7 +35,7 @@ func main() {
 	//information about API
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"Information about api": "info", // put info zavtra!
+			"Information about api": "Simple REST API. 1. Basic calculator functionality 2. Mathematican calculator functionality",
 		})
 	})
 
@@ -49,7 +49,7 @@ func main() {
 			})
 			return
 		}
-		var result int
+		var result float64
 
 		switch calcRequest.Sign {
 		case "+":
