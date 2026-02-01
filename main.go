@@ -25,6 +25,8 @@ type MathematicanRequest struct {
 	secondNum float64 `json:"secondNum"` // second number for Pow(number, secondNum)
 }
 
+// add full functional to second num! tommorow!
+
 type MathematicanResponse struct {
 	Response float64 `json:"result"`
 }
