@@ -22,10 +22,8 @@ type CalculatorResponse struct {
 type MathematicanRequest struct {
 	Number    float64 `json:"number"`
 	Type      string  `json:"type"`
-	secondNum float64 `json:"secondNum"` // second number for Pow(number, secondNum)
+	secondNum float64 `json:"secondnum"` // second number for Pow(number, secondNum)
 }
-
-// add full functional to second num! tommorow!
 
 type MathematicanResponse struct {
 	Response float64 `json:"result"`
