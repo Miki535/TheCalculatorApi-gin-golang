@@ -25,8 +25,7 @@ This API provides both basic and advanced mathematical calculations.
 Open the project folder in terminal.
 
 Run the server:
-
-go run main.go
+  go run main.go
 
 📡 Endpoints
 1. POST /getResponse
