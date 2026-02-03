@@ -6,6 +6,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 
+	"github.com/gin-contrib/cors"
+
 	"math"
 )
 
@@ -31,6 +33,14 @@ type MathematicanResponse struct {
 
 func main() {
 	r := gin.Default()
+
+	//just for my js frontend:)
+	r.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"*"},
+		AllowMethods:     []string{"POST", "GET", "OPTIONS"},
+		AllowHeaders:     []string{"Content-Type"},
+		AllowCredentials: true,
+	}))
 
 	//information about API
 	r.GET("/", func(c *gin.Context) {
