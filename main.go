@@ -133,3 +133,5 @@ func main() {
 	fmt.Println("Running on http://localhost:8080/")
 	r.Run()
 }
+
+//FIX PLEASE NOT WORKING API TOMMOROW!!!!!!!
