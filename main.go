@@ -100,7 +100,7 @@ func main() {
 			return
 		}
 		var result float64
-		//cheking type (sin, cos, tan, sqrt, pow, log, module)
+		//cheking type (sin, cos, tan, sqrt, pow, log, module) // add pow functional tommorow!!! 5 february!
 		switch mathResponse.Type {
 		case "sin":
 			result = math.Sin(mathResponse.Number * math.Pi / 180)
