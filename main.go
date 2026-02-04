@@ -90,10 +90,10 @@ func main() {
 	})
 
 	// get mathematican response
-	r.POST("/getResponse", func(c *gin.Context) {
-		var mathResponse MathematicanRequest
+	r.POST("/getRequest", func(c *gin.Context) {
+		var mathRequest MathematicanRequest
 
-		if err := c.ShouldBindJSON(&mathResponse); err != nil {
+		if err := c.ShouldBindJSON(&mathRequest); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
 				"error": "bad JSON request",
 			})
@@ -101,21 +101,21 @@ func main() {
 		}
 		var result float64
 		//cheking type (sin, cos, tan, sqrt, pow, log, module) // add pow functional tommorow!!! 5 february!
-		switch mathResponse.Type {
+		switch mathRequest.Type {
 		case "sin":
-			result = math.Sin(mathResponse.Number * math.Pi / 180)
+			result = math.Sin(mathRequest.Number * math.Pi / 180)
 		case "cos":
-			result = math.Cos(mathResponse.Number * math.Pi / 180)
+			result = math.Cos(mathRequest.Number * math.Pi / 180)
 		case "tan":
-			result = math.Tan(mathResponse.Number * math.Pi / 180)
+			result = math.Tan(mathRequest.Number * math.Pi / 180)
 		case "sqrt":
-			result = math.Sqrt(mathResponse.Number)
+			result = math.Sqrt(mathRequest.Number)
 		case "pow":
-			result = math.Pow(mathResponse.Number, mathResponse.SecondNum)
+			result = math.Pow(mathRequest.Number, mathRequest.SecondNum)
 		case "log":
-			result = math.Log(mathResponse.Number)
+			result = math.Log(mathRequest.Number)
 		case "module":
-			result = math.Abs(mathResponse.Number)
+			result = math.Abs(mathRequest.Number)
 		default:
 			c.JSON(400, gin.H{
 				"error": "unknown type!",
