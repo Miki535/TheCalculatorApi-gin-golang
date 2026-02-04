@@ -24,7 +24,7 @@ type CalculatorResponse struct {
 type MathematicanRequest struct {
 	Number    float64 `json:"number"`
 	Type      string  `json:"type"`
-	secondNum float64 `json:"secondnum"` // second number for Pow(number, secondNum)
+	SecondNum float64 `json:"secondnum"` // second number for Pow(number, secondNum)
 }
 
 type MathematicanResponse struct {
@@ -111,7 +111,7 @@ func main() {
 		case "sqrt":
 			result = math.Sqrt(mathResponse.Number)
 		case "pow":
-			result = math.Pow(mathResponse.Number, mathResponse.secondNum)
+			result = math.Pow(mathResponse.Number, mathResponse.SecondNum)
 		case "log":
 			result = math.Log(mathResponse.Number)
 		case "module":
