@@ -50,7 +50,7 @@ func main() {
 	})
 
 	//get calculator response
-	r.POST("/getRequest", func(c *gin.Context) {
+	r.POST("/getRequestCalc", func(c *gin.Context) {
 		var calcRequest CalculatorRequest
 
 		if err := c.ShouldBindJSON(&calcRequest); err != nil {
@@ -90,7 +90,7 @@ func main() {
 	})
 
 	// get mathematican response
-	r.POST("/getRequest", func(c *gin.Context) {
+	r.POST("/getRequestMath", func(c *gin.Context) {
 		var mathRequest MathematicanRequest
 
 		if err := c.ShouldBindJSON(&mathRequest); err != nil {
@@ -133,5 +133,3 @@ func main() {
 	fmt.Println("Running on http://localhost:8080/")
 	r.Run()
 }
-
-//FIX PLEASE NOT WORKING API TOMMOROW!!!!!!!
