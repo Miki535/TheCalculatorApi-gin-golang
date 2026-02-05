@@ -43,11 +43,11 @@ Returns basic information about the API.
 Postman screenshots:
 
 Basic calculator (+, -, /, *)
-<img width="906" height="546" alt="Postman-calc-ussing-screenshot" src="https://github.com/user-attachments/assets/84ec4fb1-2f7a-4509-8aca-800d62bcebe9" />
+<img width="603" height="384" alt="Postman-calc-ussing-screenshot" src="https://github.com/user-attachments/assets/cf7bbbde-da69-4799-899f-349f1fbfaafb" />
 
 
 Mathematican calculator (sin, cos, tan, sqrt, pow, log, module)
-<img width="905" height="478" alt="Postman-math-calc-ussing-screenshot" src="https://github.com/user-attachments/assets/dd0b3f21-8154-4c0d-8814-8f66036e35ac" />
+<img width="600" height="403" alt="Postman-math-ussing-screenshot" src="https://github.com/user-attachments/assets/6f6d06a4-66b5-4443-8aa9-58468f95f6e3" />
 
 
 Information about API
