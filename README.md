@@ -46,8 +46,10 @@ Basic calculator (+, -, /, *)
 <img width="603" height="384" alt="Postman-calc-ussing-screenshot" src="https://github.com/user-attachments/assets/cf7bbbde-da69-4799-899f-349f1fbfaafb" />
 
 
+
 Mathematican calculator (sin, cos, tan, sqrt, pow, log, module)
 <img width="600" height="403" alt="Postman-math-ussing-screenshot" src="https://github.com/user-attachments/assets/6f6d06a4-66b5-4443-8aa9-58468f95f6e3" />
+
 
 
 Information about API
