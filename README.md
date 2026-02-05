@@ -43,6 +43,7 @@ Returns basic information about the API.
 Postman screenshots:
 
 Basic calculator (+, -, /, *)
+
 <img width="603" height="384" alt="Postman-calc-ussing-screenshot" src="https://github.com/user-attachments/assets/cf7bbbde-da69-4799-899f-349f1fbfaafb" />
 
 
